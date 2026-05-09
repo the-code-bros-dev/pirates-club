@@ -1,17 +1,34 @@
 import { useEffect, useState } from "react";
 
-export const useCounter = (target: number, duration = 2000, start = false) => {
+export const useCounter = (
+  target: number,
+  duration = 2000,
+  start = false
+) => {
   const [count, setCount] = useState(0);
+
   useEffect(() => {
     if (!start) return;
-    let startTime = null;
+
+    let startTime: number | null = null;
+
     const step = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / duration, 1);
+      if (startTime === null) startTime = timestamp;
+
+      const progress = Math.min(
+        (timestamp - startTime) / duration,
+        1
+      );
+
       setCount(Math.floor(progress * target));
-      if (progress < 1) requestAnimationFrame(step);
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
     };
+
     requestAnimationFrame(step);
   }, [start, target, duration]);
+
   return count;
-}
+};
