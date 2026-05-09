@@ -1,0 +1,1053 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Image from "next/image";
+import heroImage from "@/assets/hero/hero1.png";
+import person1 from "@/assets/review/person1.jpg";
+import person2 from "@/assets/review/person2.jpg";
+import person3 from "@/assets/review/person3.jpg";
+import star from "@/assets/review/star.png";
+
+const reviews = [
+  {
+    name: "John D.",
+    img: person1,
+  },
+  {
+    name: "John D.",
+    img: person2,
+  },
+  {
+    name: "John D.",
+    img: person3,
+  },
+];
+
+export default function Hero() {
+  return (
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center overflow-hidden bg-black px-5  "
+    >
+      {/* 🔥 Subtle Background Glow */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#FF4D1C]/10 blur-[120px] rounded-full" />
+      {/* Grid */}
+      <div
+        className="absolute inset-0 opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
+          backgroundSize: "80px 80px",
+        }}
+      />
+
+      {/* Orange Glow */}
+      <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-[#FF4D1C]/10 blur-[180px] rounded-full hidden md:flex" />
+
+      {/* Bottom Glow */}
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#FF4D1C]/10 blur-[140px] rounded-full" />
+
+      {/* Noise */}
+      <div className="pointer-events-none absolute inset-0 opacity-[0.04] mix-blend-overlay bg-[url('/noise.png')]" />
+
+      <div className="md:grid md:grid-cols-2 flex flex-col-reverse items-center w-full gap-10  max-w-7xl mx-auto">
+        {/* 🧠 LEFT CONTENT */}
+        <div className="relative z-10 max-w-xl">
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="inline-flex items-center gap-3 mb-8 border border-[#FF4D1C]/30 px-5 py-2 bg-[#FF4D1C]/5 backdrop-blur-sm"
+          >
+            <span className="w-2 h-2 rounded-full bg-[#FF4D1C] animate-pulse" />
+            <span className="font-mono text-[#FF4D1C] text-[10px] tracking-[0.2em] uppercase">
+              Best Gym · Thudiyalur · Coimbatore
+            </span>
+          </motion.div>
+
+          {/* Heading */}
+          <div className="overflow-hidden mb-2">
+            <motion.h1
+              initial={{ y: 120 }}
+              animate={{ y: 0 }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              className="font-display text-[clamp(3rem,10vw,5rem)] font-black leading-[0.9] uppercase text-white"
+            >
+              FORGE YOUR
+            </motion.h1>
+          </div>
+
+          <div className="overflow-hidden mb-6">
+            <motion.h1
+              initial={{ y: 120 }}
+              animate={{ y: 0 }}
+              transition={{ duration: 0.9, delay: 0.1 }}
+              className="font-display text-[clamp(3rem,10vw,4.5rem)] font-black leading-[0.9] uppercase"
+              style={{
+                WebkitTextStroke: "2px #FF4D1C",
+                color: "transparent",
+              }}
+            >
+              LIMITS
+            </motion.h1>
+          </div>
+
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="text-cream text-lg leading-relaxed mb-10 lowercase"
+          >
+            Premium scientifically-backed training. Personalized nutrition. Real
+            transformations. EACH NEW DAY IS A NEW OPPORTUNITY TO IMPROVE
+            YOURSELF. TAKE IT. AND MAKE THE MOST OF IT.
+          </motion.p>
+
+          {/* Buttons */}
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 30,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              delay: 0.55,
+            }}
+            className="flex flex-wrap gap-4 mb-8"
+          >
+            {/* Primary */}
+            <motion.button
+              whileHover={{
+                y: -4,
+              }}
+              whileTap={{
+                scale: 0.96,
+              }}
+              className="
+                group relative overflow-hidden
+                rounded-full
+                bg-[#FF4D1C]
+                px-8 py-5
+              "
+            >
+              {/* Shine */}
+              <div
+                className="
+                  absolute -left-20 top-0
+                  h-full w-16
+                  rotate-12
+                  bg-white/20 blur-2xl
+                  group-hover:translate-x-[300px]
+                  transition-transform duration-1000
+                "
+              />
+
+              <span
+                className="
+                  relative z-10
+                  font-mono text-xs
+                  tracking-[0.3em]
+                  uppercase text-white
+                "
+              >
+                Start Free Trial
+              </span>
+            </motion.button>
+
+            {/* Secondary */}
+            <motion.a
+              href="tel:+918778840553"
+              whileHover={{
+                y: -4,
+              }}
+              whileTap={{
+                scale: 0.96,
+              }}
+              className="
+                group
+                rounded-full
+                border border-white/10
+                bg-white/[0.03]
+                backdrop-blur-xl
+                px-8 py-5
+                transition-all duration-300
+                hover:border-[#FF4D1C]/40
+              "
+            >
+              <span
+                className="
+                  font-mono text-xs
+                  tracking-[0.3em]
+                  uppercase text-white
+                "
+              >
+                Call Now
+              </span>
+            </motion.a>
+          </motion.div>
+
+          {/* status */}
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              delay: 0.7,
+            }}
+            className="flex flex-wrap items-center gap-8 mt-10"
+          >
+            <div>
+              <h3 className="font-display text-4xl font-black text-white">
+                500+
+              </h3>
+
+              <p className="font-mono text-[10px] tracking-[0.25em] uppercase text-white/40">
+                Active Members
+              </p>
+            </div>
+
+            <div className="w-px h-12 bg-white/10" />
+
+            <div>
+              <h3 className="font-display text-4xl font-black text-[#FF4D1C]">
+                4.9
+              </h3>
+
+              <p className="font-mono text-[10px] tracking-[0.25em] uppercase text-white/40">
+                Google Rating
+              </p>
+            </div>
+
+            <div className="w-px h-12 bg-white/10" />
+
+            <div>
+              <h3 className="font-display text-4xl font-black text-white">
+                24/7
+              </h3>
+
+              <p className="font-mono text-[10px] tracking-[0.25em] uppercase text-white/40">
+                Motivation
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.55 }}
+          >
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="mt-6 text-sm text-cream-3 font-medium tracking-wide"
+            >
+              <span className="text-[#FF4D1C]">🔥 500+ </span>
+              members joined in the last 24 hours
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* 🧍 RIGHT IMAGE SECTION */}
+        <div className="relative flex justify-center items-center md:mt-0 mt-25">
+          {/* 🔴 Glow Behind Model */}
+          <div className="absolute w-[400px] h-[400px] bg-[#FF4D1C]/20 blur-[100px] rounded-full right-[40%]" />
+
+          {/* PREMIUM GOOGLE REVIEWS FLOATING CARD */}
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 30,
+              scale: 0.9,
+            }}
+            animate={{
+              opacity: 1,
+              y: [0, -10, 0],
+              scale: 1,
+            }}
+            transition={{
+              opacity: {
+                duration: 0.8,
+                delay: 0.5,
+              },
+              scale: {
+                duration: 0.8,
+                delay: 0.5,
+              },
+              y: {
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              },
+            }}
+            className="
+    absolute top-0 md:top-5 -right-3 md:-right-15
+    z-50
+  "
+          >
+            {/* Glow */}
+            <div className="absolute inset-0 bg-[#FF4D1C]/20 blur-2xl rounded-2xl" />
+
+            {/* Main Card */}
+            <div
+              className="
+      relative overflow-hidden
+      flex items-center gap-3
+      rounded-2xl
+      border border-white/10
+      bg-black/50
+      backdrop-blur-2xl
+      px-2.5 py-1.5
+      shadow-[0_10px_40px_rgba(0,0,0,0.45)]
+    "
+            >
+              {/* Shine Sweep */}
+              <div
+                className="
+        absolute -left-20 top-0
+        h-full w-16
+        rotate-12
+        bg-white/10
+        blur-2xl
+        animate-[shine_5s_linear_infinite]
+      "
+              />
+
+              {/* Avatars */}
+              <div className="flex -space-x-3">
+                {reviews.map((review, index) => (
+                  <motion.div
+                    key={index}
+                    whileHover={{
+                      y: -3,
+                      scale: 1.05,
+                    }}
+                    transition={{
+                      duration: 0.2,
+                    }}
+                    className="
+            relative
+            border-2 border-[#0B0B0B]
+            rounded-full
+            overflow-hidden
+          "
+                  >
+                    <Image
+                      src={review.img}
+                      alt={review.name}
+                      className="
+              md:w-10 md:h-10
+              w-7 h-7
+              object-cover
+            "
+                    />
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Content */}
+              <div>
+                {/* Stars */}
+                <div className="flex items-center gap-1 mb-1">
+                  {Array(5)
+                    .fill(0)
+                    .map((_, starIndex) => (
+                      <motion.div
+                        key={starIndex}
+                        animate={{
+                          scale: [1, 1.15, 1],
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          delay: starIndex * 0.15,
+                        }}
+                      >
+                        <Image
+                          src={star}
+                          alt="Star"
+                          className="
+                  md:w-3.5 md:h-3.5
+                  w-2 h-2
+                "
+                        />
+                      </motion.div>
+                    ))}
+                </div>
+
+                {/* Rating */}
+                <h2
+                  className="
+          font-display
+          md:text-lg text-sm
+          font-semibold
+          leading-none
+          text-white
+        "
+                >
+                  4.9/5 Ratings
+                </h2>
+
+                {/* Small Text */}
+                <p
+                  className="
+          mt-1
+          font-mono
+          text-[9px] md:text-[10px]
+          tracking-[0.25em]
+          uppercase
+          text-white/45
+          hidden md:flex
+        "
+                >
+                  Trusted By Athletes
+                </p>
+              </div>
+
+              {/* Orange Dot */}
+              <div className="absolute top-3 right-3">
+                <span className="flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-[#FF4D1C] opacity-75 animate-ping" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF4D1C]" />
+                </span>
+              </div>
+            </div>
+          </motion.div>
+          {/* Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="relative z-0"
+          >
+            <Image
+              src={heroImage}
+              alt="Hero"
+              className="w-full h-full object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.4)]"
+              priority
+            />
+          </motion.div>
+
+          {/* 🌓 Ground Shadow */}
+          <div className="absolute bottom-6 w-40 h-16 bg-black/40 blur-2xl rounded-full " />
+
+          {/* 💎 Floating Glass Card */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="absolute md:top-10 md:-left-2 bottom-0 left-0 z-100"
+          >
+            <motion.div
+              animate={{ y: [0, -12, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeIn" }}
+              className=" w-[120px] md:w-[220px] h-[65px] md:h-[100px]
+                         bg-cream-3/90 backdrop-blur-xl z-20
+                         border border-white/80
+                         shadow-[0_10px_40px_rgba(0,0,0,0.2)]
+                         rounded-2xl p-2 md:p-4"
+            >
+              <p className="text-[10px] md:text-[10px] uppercase tracking-widest text-[#161311]/60">
+                Elite Training
+              </p>
+              <h2 className="md:text-base text-xs font-bold leading-tight mt-1 text-[#161311]">
+                Build Your <span className="text-[#FF4D1C]">Ultimate Body</span>
+              </h2>
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* 🎞️ Grain Texture */}
+      <div className="pointer-events-none absolute inset-0 opacity-[0.05] mix-blend-overlay bg-[url('/noise.png')]" />
+    </section>
+  );
+}
+
+// "use client";
+
+// import { motion } from "framer-motion";
+// import Image from "next/image";
+
+// import heroImage from "@/assets/body-pose-02.png";
+// import person1 from "@/assets/person1.jpg";
+// import person2 from "@/assets/person2.jpg";
+// import person3 from "@/assets/person3.jpg";
+// import star from "@/assets/star.png";
+
+// const reviews = [
+//   {
+//     name: "John D.",
+//     img: person1,
+//   },
+//   {
+//     name: "Sarah",
+//     img: person2,
+//   },
+//   {
+//     name: "Mike",
+//     img: person3,
+//   },
+// ];
+
+// export default function Hero() {
+//   return (
+//     <section
+//       id="home"
+//       className="
+//         relative overflow-hidden
+//         min-h-screen
+//         flex items-center
+//         bg-[#050505]
+//         px-5 lg:px-10 xl:px-24
+//         pt-32 md:pt-24
+//       "
+//     >
+//       {/* =========================================
+//           PREMIUM BACKGROUND
+//       ========================================= */}
+
+// {/* Grid */}
+// <div
+//   className="absolute inset-0 opacity-[0.05]"
+//   style={{
+//     backgroundImage:
+//       "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
+//     backgroundSize: "80px 80px",
+//   }}
+// />
+
+// {/* Orange Glow */}
+// <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-[#FF4D1C]/10 blur-[180px] rounded-full" />
+
+// {/* Bottom Glow */}
+// <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#FF4D1C]/10 blur-[140px] rounded-full" />
+
+// {/* Noise */}
+// <div className="pointer-events-none absolute inset-0 opacity-[0.04] mix-blend-overlay bg-[url('/noise.png')]" />
+
+//       <div
+//         className="
+//           relative z-10
+//           grid lg:grid-cols-2
+//           gap-16 items-center
+//           max-w-7xl mx-auto
+//           w-full
+//         "
+//       >
+//         {/* =========================================
+//             LEFT CONTENT
+//         ========================================= */}
+//         <div className="max-w-2xl">
+//           {/* Badge */}
+//           <motion.div
+//             initial={{
+//               opacity: 0,
+//               y: 20,
+//             }}
+//             animate={{
+//               opacity: 1,
+//               y: 0,
+//             }}
+//             transition={{
+//               duration: 0.7,
+//             }}
+//             className="
+//               inline-flex items-center gap-3
+//               mb-8
+//               rounded-full
+//               border border-[#FF4D1C]/20
+//               bg-[#FF4D1C]/5
+//               backdrop-blur-xl
+//               px-5 py-2
+//             "
+//           >
+//             <span className="w-2 h-2 rounded-full bg-[#FF4D1C] animate-pulse" />
+
+//             <span
+//               className="
+//                 font-mono text-[10px]
+//                 tracking-[0.3em]
+//                 uppercase text-[#FF4D1C]
+//               "
+//             >
+//               Best Gym · Thudiyalur · Coimbatore
+//             </span>
+//           </motion.div>
+
+//           {/* Small Label */}
+//           <motion.div
+//             initial={{
+//               opacity: 0,
+//               y: 20,
+//             }}
+//             animate={{
+//               opacity: 1,
+//               y: 0,
+//             }}
+//             transition={{
+//               delay: 0.15,
+//             }}
+//             className="flex items-center gap-4 mb-6"
+//           >
+//             <div className="w-12 h-[1px] bg-[#FF4D1C]" />
+
+//             <p
+//               className="
+//                 font-mono
+//                 text-[11px]
+//                 tracking-[0.35em]
+//                 uppercase
+//                 text-white/50
+//               "
+//             >
+//               Elite Performance Club
+//             </p>
+//           </motion.div>
+
+//           {/* Main Heading */}
+//           <div className="overflow-hidden">
+//             <motion.h1
+//               initial={{
+//                 y: 120,
+//               }}
+//               animate={{
+//                 y: 0,
+//               }}
+//               transition={{
+//                 duration: 1,
+//                 ease: [0.16, 1, 0.3, 1],
+//               }}
+//               className="
+//                 font-display
+//                 text-[clamp(4rem,10vw,8rem)]
+//                 leading-[0.88]
+//                 uppercase
+//                 font-black
+//                 text-white
+//               "
+//             >
+//               FORGE
+//             </motion.h1>
+//           </div>
+
+//           <div className="overflow-hidden">
+//             <motion.h1
+//               initial={{
+//                 y: 120,
+//               }}
+//               animate={{
+//                 y: 0,
+//               }}
+//               transition={{
+//                 duration: 1,
+//                 delay: 0.08,
+//                 ease: [0.16, 1, 0.3, 1],
+//               }}
+//               className="
+//                 font-display
+//                 text-[clamp(4rem,10vw,8rem)]
+//                 leading-[0.88]
+//                 uppercase
+//                 font-black
+//               "
+//               style={{
+//                 WebkitTextStroke: "2px #FF4D1C",
+//                 color: "transparent",
+//               }}
+//             >
+//               YOUR
+//             </motion.h1>
+//           </div>
+
+//           <div className="overflow-hidden mb-8">
+//             <motion.h1
+//               initial={{
+//                 y: 120,
+//               }}
+//               animate={{
+//                 y: 0,
+//               }}
+//               transition={{
+//                 duration: 1,
+//                 delay: 0.16,
+//                 ease: [0.16, 1, 0.3, 1],
+//               }}
+//               className="
+//                 font-display
+//                 text-[clamp(4rem,10vw,8rem)]
+//                 leading-[0.88]
+//                 uppercase
+//                 font-black
+//                 text-white
+//               "
+//             >
+//               LIMITS
+//             </motion.h1>
+//           </div>
+
+//           {/* Description */}
+//           <motion.p
+//             initial={{
+//               opacity: 0,
+//               y: 30,
+//             }}
+//             animate={{
+//               opacity: 1,
+//               y: 0,
+//             }}
+//             transition={{
+//               delay: 0.4,
+//             }}
+//             className="
+//               max-w-xl
+//               text-white/55
+//               text-lg
+//               leading-relaxed
+//               mb-10
+//             "
+//           >
+//             Premium science-backed training, elite coaching,
+//             and personalized transformation systems designed
+//             to push your body beyond average.
+//           </motion.p>
+
+{
+  /* Buttons */
+}
+// <motion.div
+//   initial={{
+//     opacity: 0,
+//     y: 30,
+//   }}
+//   animate={{
+//     opacity: 1,
+//     y: 0,
+//   }}
+//   transition={{
+//     delay: 0.55,
+//   }}
+//   className="flex flex-wrap gap-4 mb-8"
+// >
+//   {/* Primary */}
+//   <motion.button
+//     whileHover={{
+//       y: -4,
+//     }}
+//     whileTap={{
+//       scale: 0.96,
+//     }}
+//     className="
+//       group relative overflow-hidden
+//       rounded-full
+//       bg-[#FF4D1C]
+//       px-8 py-5
+//     "
+//   >
+//     {/* Shine */}
+//     <div
+//       className="
+//         absolute -left-20 top-0
+//         h-full w-16
+//         rotate-12
+//         bg-white/20 blur-2xl
+//         group-hover:translate-x-[300px]
+//         transition-transform duration-1000
+//       "
+//     />
+
+//     <span
+//       className="
+//         relative z-10
+//         font-mono text-xs
+//         tracking-[0.3em]
+//         uppercase text-white
+//       "
+//     >
+//       Start Free Trial
+//     </span>
+//   </motion.button>
+
+//   {/* Secondary */}
+//   <motion.a
+//     href="tel:+918778840553"
+//     whileHover={{
+//       y: -4,
+//     }}
+//     whileTap={{
+//       scale: 0.96,
+//     }}
+//     className="
+//       group
+//       rounded-full
+//       border border-white/10
+//       bg-white/[0.03]
+//       backdrop-blur-xl
+//       px-8 py-5
+//       transition-all duration-300
+//       hover:border-[#FF4D1C]/40
+//     "
+//   >
+//     <span
+//       className="
+//         font-mono text-xs
+//         tracking-[0.3em]
+//         uppercase text-white
+//       "
+//     >
+//       Call Now
+//     </span>
+//   </motion.a>
+// </motion.div>
+
+//           {/* Stats */}
+//           <motion.div
+//             initial={{
+//               opacity: 0,
+//               y: 20,
+//             }}
+//             animate={{
+//               opacity: 1,
+//               y: 0,
+//             }}
+//             transition={{
+//               delay: 0.7,
+//             }}
+//             className="flex flex-wrap items-center gap-8"
+//           >
+//             <div>
+//               <h3 className="font-display text-4xl font-black text-white">
+//                 500+
+//               </h3>
+
+//               <p className="font-mono text-[10px] tracking-[0.25em] uppercase text-white/40">
+//                 Active Members
+//               </p>
+//             </div>
+
+//             <div className="w-px h-12 bg-white/10" />
+
+//             <div>
+//               <h3 className="font-display text-4xl font-black text-[#FF4D1C]">
+//                 4.9
+//               </h3>
+
+//               <p className="font-mono text-[10px] tracking-[0.25em] uppercase text-white/40">
+//                 Google Rating
+//               </p>
+//             </div>
+
+//             <div className="w-px h-12 bg-white/10" />
+
+//             <div>
+//               <h3 className="font-display text-4xl font-black text-white">
+//                 24/7
+//               </h3>
+
+//               <p className="font-mono text-[10px] tracking-[0.25em] uppercase text-white/40">
+//                 Motivation
+//               </p>
+//             </div>
+//           </motion.div>
+//         </div>
+
+//         {/* =========================================
+//             RIGHT VISUAL
+//         ========================================= */}
+//         <div className="relative flex justify-center items-center">
+//           {/* Glow */}
+//           <div className="absolute w-[450px] h-[450px] bg-[#FF4D1C]/20 blur-[120px] rounded-full" />
+
+//           {/* Circle Ring */}
+//           <div className="absolute w-[80%] aspect-square rounded-full border border-white/10" />
+
+//           {/* Hero Image */}
+//           <motion.div
+//             initial={{
+//               opacity: 0,
+//               scale: 0.9,
+//             }}
+//             animate={{
+//               opacity: 1,
+//               scale: 1,
+//             }}
+//             transition={{
+//               duration: 1,
+//             }}
+//             className="relative z-10"
+//           >
+//             <Image
+//               src={heroImage}
+//               alt="Fitness Model"
+//               priority
+//               className="
+//                 w-full max-w-[650px]
+//                 object-contain
+//                 drop-shadow-[0_40px_80px_rgba(0,0,0,0.5)]
+//               "
+//             />
+//           </motion.div>
+
+//           {/* Reviews Card */}
+//           <motion.div
+//             initial={{
+//               opacity: 0,
+//               x: -40,
+//             }}
+//             animate={{
+//               opacity: 1,
+//               x: 0,
+//             }}
+//             transition={{
+//               delay: 0.8,
+//             }}
+//             className="
+//               absolute left-0 top-10
+//               z-20
+//             "
+//           >
+//             <div
+//               className="
+//                 rounded-3xl
+//                 border border-white/10
+//                 bg-black/60
+//                 backdrop-blur-2xl
+//                 px-5 py-4
+//                 shadow-[0_10px_50px_rgba(0,0,0,0.4)]
+//               "
+//             >
+//               <div className="flex items-center gap-4">
+//                 {/* Avatars */}
+//                 <div className="flex -space-x-3">
+//                   {reviews.map((review, index) => (
+//                     <Image
+//                       key={index}
+//                       src={review.img}
+//                       alt={review.name}
+//                       className="
+//                         w-10 h-10 rounded-full
+//                         object-cover
+//                         border-2 border-black
+//                       "
+//                     />
+//                   ))}
+//                 </div>
+
+//                 <div>
+//                   <div className="flex gap-1 mb-1">
+//                     {Array(5)
+//                       .fill(0)
+//                       .map((_, i) => (
+//                         <Image
+//                           key={i}
+//                           src={star}
+//                           alt="star"
+//                           className="w-4 h-4"
+//                         />
+//                       ))}
+//                   </div>
+
+//                   <h3 className="text-white font-bold text-sm">
+//                     4.9/5 Reviews
+//                   </h3>
+
+//                   <p className="text-white/40 text-xs">
+//                     Trusted by 500+ members
+//                   </p>
+//                 </div>
+//               </div>
+//             </div>
+//           </motion.div>
+
+//           {/* Floating Card */}
+//           <motion.div
+//             initial={{
+//               opacity: 0,
+//               x: 40,
+//             }}
+//             animate={{
+//               opacity: 1,
+//               x: 0,
+//             }}
+//             transition={{
+//               delay: 1,
+//             }}
+//             className="
+//               absolute bottom-10 right-0
+//               z-20
+//             "
+//           >
+//             <motion.div
+//               animate={{
+//                 y: [0, -12, 0],
+//               }}
+//               transition={{
+//                 duration: 3,
+//                 repeat: Infinity,
+//               }}
+//               className="
+//                 relative overflow-hidden
+//                 rounded-[28px]
+//                 border border-white/10
+//                 bg-white/10
+//                 backdrop-blur-2xl
+//                 px-6 py-5
+//                 shadow-[0_10px_60px_rgba(0,0,0,0.4)]
+//               "
+//             >
+//               {/* Shine */}
+//               <div
+//                 className="
+//                   absolute -left-20 top-0
+//                   h-full w-16 rotate-12
+//                   bg-white/20 blur-2xl
+//                 "
+//               />
+
+//               <p
+//                 className="
+//                   font-mono text-[10px]
+//                   tracking-[0.25em]
+//                   uppercase text-white/50
+//                   mb-2
+//                 "
+//               >
+//                 Elite Training
+//               </p>
+
+//               <h3
+//                 className="
+//                   font-display
+//                   text-2xl
+//                   uppercase
+//                   font-black
+//                   leading-none
+//                   text-white
+//                 "
+//               >
+//                 Build Your
+//                 <br />
+
+//                 <span className="text-[#FF4D1C]">
+//                   Ultimate Body
+//                 </span>
+//               </h3>
+//             </motion.div>
+//           </motion.div>
+
+//           {/* Ground Shadow */}
+//           <div className="absolute bottom-0 w-52 h-16 bg-black/50 blur-3xl rounded-full" />
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
