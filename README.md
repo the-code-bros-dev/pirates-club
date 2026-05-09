@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🏴‍☠️ Pirates Club — Elite Fitness Experience
 
 > A cinematic, high-performance gym landing experience crafted with **Next.js 15**, **Tailwind CSS v4**, **Framer Motion**, and a dark industrial visual system inspired by luxury fitness brands.
@@ -269,3 +270,7 @@ Free for personal and commercial use.
 - Tailwind CSS
 - Framer Motion
 - Pure obsession for premium UI/UX
+=======
+# pirates-club
+Premium gym &amp; fitness website with cinematic UI, smooth scrolling, glassmorphism, advanced animations, and elite branding.
+>>>>>>> 33047dc51e59d869b7bba20b1cb171cc25d5a98a
